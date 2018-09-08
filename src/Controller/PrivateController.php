@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PrivateController extends AbstractController
@@ -13,6 +12,6 @@ class PrivateController extends AbstractController
      */
     public function index()
     {
-        return new Response('This is private!');
+        return $this->render('private.html.twig', []);
     }
 }

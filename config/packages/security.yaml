@@ -1,12 +1,32 @@
 security:
     providers:
-        in_memory: { memory: ~ }
+        hwi:
+            id: hwi_oauth.user.provider
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        auth0:
+            anonymous: ~
+            pattern: ^/
+            oauth:
+                resource_owners:
+                    auth0: "/login/check-auth0"
+                login_path: /login
+                use_forward: false
+                failure_path: /login
+
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider
+            logout:
+                path:   /logout
+                target: /public
+
         main:
             anonymous: true
 
     access_control:
-         - { path: ^/private, roles: ROLE_USER }
+         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/private, roles: ROLE_OAUTH_USER }

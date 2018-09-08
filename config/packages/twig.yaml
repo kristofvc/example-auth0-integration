@@ -1,0 +1,7 @@
+twig:
+    paths: ['%kernel.project_dir%/templates']
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    globals:
+        auth0_client_id: '%env(AUTH0_CLIENT_ID)%'
+        auth0_domain: '%env(AUTH0_DOMAIN)%'

@@ -9,4 +9,5 @@ return [
     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
+    Auth0\JWTAuthBundle\JWTAuthBundle::class => ['all' => true],
 ];

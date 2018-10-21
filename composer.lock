@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fbd398276446edb7870a5a158f840e4",
+    "content-hash": "8a16ea3816d3197a644add13a0f6d54b",
     "packages": [
         {
             "name": "auth0/auth0-php",
@@ -49,6 +49,62 @@
             ],
             "description": "Auth0 PHP SDK.",
             "time": "2018-06-13T18:07:09+00:00"
+        },
+        {
+            "name": "auth0/jwt-auth-bundle",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auth0/jwt-auth-bundle.git",
+                "reference": "632fe5d66a15b411e9be0c122980944364a1dbfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auth0/jwt-auth-bundle/zipball/632fe5d66a15b411e9be0c122980944364a1dbfc",
+                "reference": "632fe5d66a15b411e9be0c122980944364a1dbfc",
+                "shasum": ""
+            },
+            "require": {
+                "auth0/auth0-php": "^5.0.3",
+                "php": "^5.5 || ^7.0",
+                "symfony/framework-bundle": "^2.8 || ~3.0 || ~4.0"
+            },
+            "require-dev": {
+                "nyholm/symfony-bundle-test": "^1.0.2",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.21",
+                "symfony/framework-bundle": "^2.8 || ~3.3.0",
+                "symfony/security": "^2.8 || ~3.3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Auth0\\JWTAuthBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "German Lena",
+                    "email": "german@auth0.com"
+                },
+                {
+                    "name": "Josh Cunningham",
+                    "email": "josh.cunningham@auth0.com"
+                }
+            ],
+            "description": "Support for authenticating users with a JWT in Symfony.",
+            "homepage": "http://github.com/auth0/jwt-auth-bundle",
+            "keywords": [
+                "Authentication",
+                "auth0",
+                "firewall",
+                "jwt",
+                "security"
+            ],
+            "time": "2018-07-12T23:34:28+00:00"
         },
         {
             "name": "clue/stream-filter",

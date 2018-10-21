@@ -2,6 +2,8 @@ security:
     providers:
         hwi:
             id: hwi_oauth.user.provider
+        auth0:
+            id: App\Security\Auth0UserProvider
 
     firewalls:
         dev:
@@ -9,6 +11,7 @@ security:
             security: false
 
         auth0:
+            provider: hwi
             anonymous: ~
             pattern: ^/
             oauth:
@@ -24,9 +27,17 @@ security:
                 path:   /logout
                 target: /public
 
+        api:
+            provider: auth0
+            pattern: ^/api
+            stateless: true
+            simple_preauth:
+                authenticator: jwt_auth.jwt_authenticator
+
         main:
             anonymous: true
 
     access_control:
          - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/private, roles: ROLE_OAUTH_USER }
+         - { path: ^/api, roles: ROLE_OAUTH_USER }
